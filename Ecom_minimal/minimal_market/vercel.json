@@ -6,6 +6,10 @@
     }],
     "routes": [
         {
+            "src": "/media/item_images/(.*)",
+            "dest": "media/item_images/$1"      
+        },
+        {
             "src": "/(.*)",
             "dest": "minimal_market/wsgi.py"
         }
