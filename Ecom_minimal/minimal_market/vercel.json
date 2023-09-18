@@ -9,5 +9,10 @@
             "src": "/(.*)",
             "dest": "minimal_market/wsgi.py"
         }
-    ]
+    ],
+    "env": {
+        "DJANGO_SETTINGS_MODULE": "minimal_market.settings.production",
+        "SECRET_KEY": "django-insecure-g&)#zghn%sck$h3s#v5y$ixs_t-b1els0_yap4*kbg==&i^!z)",
+        "VERCEL": "1"
+      }
 }
