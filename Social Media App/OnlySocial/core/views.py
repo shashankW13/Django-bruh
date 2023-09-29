@@ -15,13 +15,13 @@ def signup(request):
         if password == password2:
             if User.objects.filter(username=username).exists():
                 messages.info(request, 'Username Taken')
-                return redirect('signup')
+                return redirect('core:signup')
             elif User.objects.filter(email=email).exists():
                 messages.info(request, 'Email Taken')
-                return redirect('signup')
+                return redirect('core:signup')
             elif User.objects.filter(username=username).exists():
                 messages.info(request, 'Username Taken')
-                return redirect('signup')
+                return redirect('core:signup')
             else:
                 user = User.objects.create_user(username=username,
                                                 email=email,
@@ -34,10 +34,26 @@ def signup(request):
                 user_model = User.objects.get(username=username)
                 new_profile = Profile.objects.create(user=user_model, id_user=user_model.id)
                 new_profile.save()
-                return redirect('signup')
+                return redirect('core:singin')
         else:
             messages.info(request, 'Passwords not matching')
-            return redirect('signup')
+            return redirect('core:signup')
 
     else:
         return render(request, 'signup.html')
+
+def signin(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/')
+        else:
+            messages.info(request, 'Incorrect credentials')
+            return redirect('core:signin')
+    else:
+        return render(request, 'signin.html')
