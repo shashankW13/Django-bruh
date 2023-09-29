@@ -2,6 +2,9 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Profile
+from django.contrib.auth.decorators import login_required
+
+@login_required(login_url='core:signin')
 def index(request):
     return render(request, 'index.html')
 
@@ -42,6 +45,7 @@ def signup(request):
     else:
         return render(request, 'signup.html')
 
+
 def signin(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -57,3 +61,8 @@ def signin(request):
             return redirect('core:signin')
     else:
         return render(request, 'signin.html')
+
+@login_required(login_url='core:signin')
+def logout(request):
+    auth.logout(request)
+    return redirect('core:signin')
