@@ -76,50 +76,26 @@ def settings(request):
     user_profile = Profile.objects.get(user=request.user)
 
     if request.method == 'POST':
-        if request.FILES.get('image') is None:
-            image = user_profile.profile_img
-            bio = request.POST['bio']
-            location = request.POST['location']
-            first_name = request.POST['fname']
-            last_name = request.POST['lname']
-            email = request.POST['email']
-            work = request.POST['work']
-            relationship = request.POST['relationship']
+        image = request.FILES.get('image')
+        bio = request.POST['bio']
+        location = request.POST['location']
+        first_name = request.POST['fname']
+        last_name = request.POST['lname']
+        email = request.POST['email']
+        work = request.POST['work']
+        relationship = request.POST['relationship']
 
+        if image:
             user_profile.profile_img = image
-            user_profile.bio = bio
-            user_profile.location = location
-            user_profile.first_name = first_name
-            user_profile.last_name = last_name
-            user_profile.email = email
-            user_profile.work = work
-            user_profile.relationship = relationship
-            user_profile.save()
 
-
-
-        if request.FILES.get('image') is not None:
-            image = request.FILES.get('image')
-            bio = request.POST['bio']
-            location = request.POST['location']
-            first_name = request.POST['fname']
-            last_name = request.POST['lname']
-            email = request.POST['email']
-            work = request.POST['work']
-            relationship = request.POST['relationship']
-
-            user_profile.profile_img = image
-            user_profile.bio = bio
-            user_profile.location = location
-            user_profile.first_name = first_name
-            user_profile.last_name = last_name
-            user_profile.email = email
-            user_profile.work = work
-            user_profile.relationship = relationship
-            user_profile.save()
-
-
-        return redirect('core:settings')
+        user_profile.bio = bio
+        user_profile.location = location
+        user_profile.first_name = first_name
+        user_profile.last_name = last_name
+        user_profile.email = email
+        user_profile.work = work
+        user_profile.relationship = relationship
+        user_profile.save()
 
     return render(request, 'setting.html', {'user_profile': user_profile})
 
