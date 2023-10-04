@@ -120,3 +120,6 @@ def settings(request):
         return redirect('core:settings')
 
     return render(request, 'setting.html', {'user_profile': user_profile})
+
+def upload(request):
+    return HttpResponse('Upload')
