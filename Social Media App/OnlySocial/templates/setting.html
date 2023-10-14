@@ -29,7 +29,7 @@
                     <a href="/">Home</a> / Account Settings for <b>{{ user.username }}</b></h1>
                 <ul class="mt-5 -mr-3 flex-nowrap lg:overflow-hidden overflow-x-scroll uk-tab">
                     <li class="uk-active"><a href="#">General</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="{% url 'core:profile' pk=user_profile.user %}">Profile</a></li>
                     <li><a href="#">Privacy</a></li>
                     <li><a href="#">Notification</a></li>
                     <li><a href="#">Social links</a></li>
