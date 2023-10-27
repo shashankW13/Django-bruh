@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+<<<<<<< HEAD
 import os
+=======
+>>>>>>> 2eda86e2da4e94185244b2ddc31d0d48c82f2255
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,8 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'api',
     'rest_framework',
+=======
+>>>>>>> 2eda86e2da4e94185244b2ddc31d0d48c82f2255
 ]
 
 MIDDLEWARE = [
@@ -78,12 +84,17 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD
         'ENGINE': os.environ.get('DB_DRIVER', 'django.db.backends.postgresql'),
         'NAME': os.environ.get('PG_DB', 'postgres'),
         'USER': os.environ.get('PG_USER', 'postgres'),
         'PASSWORD': os.environ.get('PG_PASSWORD', 'postgres'),
         'HOST': os.environ.get('PG_HOST', 'localhost'),
         'PORT': os.environ.get('PG_PORT', '5432'),
+=======
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+>>>>>>> 2eda86e2da4e94185244b2ddc31d0d48c82f2255
     }
 }
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import User
@@ -41,3 +42,8 @@ def deleteUser(request, pk):
     user.delete()
 
     return Response({'msg': 'Deleted successfully'}, status=status.HTTP_200_OK)
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> 2eda86e2da4e94185244b2ddc31d0d48c82f2255
