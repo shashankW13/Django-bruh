@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+    My Blog
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/index.css' %}">
+{% endblock css %}
+
+{% block content %}
+    
+        
+        
+        <div class="about-author">
+            <div>
+                <img src="https://sarahscoop.com/wp-content/uploads/2021/10/itachi-uchiha.jpg" alt="Itachi"
+                    class="profile-picture">
+            </div>
+            
+            <div class="author-name">
+                SHASHANK'S BLOG 
+            </div>
+        </div>
+
+        <div class="author-bio">
+            Hi, I am Shashank and I love to blog about tech and the world!
+        </div>
+
+        <div class="all-blogs">
+            <div style="margin-bottom: 30px; font-weight:bold;">
+                My Latest Thoughts
+            </div>
+    
+            <div class="blog-cards">
+                {% for blog in blogs %}
+    
+                <div class="blog-info">
+                    <div>
+                        <img src="https://i.pinimg.com/originals/e3/92/8f/e3928f436c5055a6955f0ecf25b5d416.jpg" 
+                                alt="Flowers"
+                                class="blog-icon">
+                    </div>
+    
+                    <div class="blog-title">
+                        {{ blog.title }}
+                    </div>
+    
+                    <div class="blog-summary">
+                        {{ blog.content }}
+                    </div>
+                </div>
+
+                {% endfor %}
+
+                {% comment %} <div class="blog-info">
+                    <div>
+                        <img src="https://wallpapers.com/images/hd/lotus-flower-beautiful-waterfall-0gowp0lv2cadpvs3.jpg" 
+                                alt="Waterfall"
+                                class="blog-icon">
+                    </div>
+    
+                    <div class="blog-title">
+                        Nature At Its Best
+                    </div>
+    
+                    <div class="blog-summary">
+                        A waterfall is a natural geological feature where a river or stream flows 
+                        over a vertical drop or series of drops in its course. 
+                    </div>
+                </div>
+
+                <div class="blog-info">
+                    <div>
+                        <img src="https://i.pinimg.com/originals/e3/92/8f/e3928f436c5055a6955f0ecf25b5d416.jpg" 
+                                alt="Flowers"
+                                class="blog-icon">
+                    </div>
+    
+                    <div class="blog-title">
+                        Nature At Its Best
+                    </div>
+    
+                    <div class="blog-summary">
+                        Nature is amazing. 
+                        The amount of inspiration I get when walking 
+                        in the nature is incredible.
+                    </div>
+                </div> {% endcomment %}
+                
+            </div>
+        </div>
+
+
+{% endblock %}
