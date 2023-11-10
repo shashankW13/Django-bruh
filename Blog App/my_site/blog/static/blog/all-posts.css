@@ -1,69 +1,43 @@
-.background-page {
-    background: linear-gradient(52deg, rgba(105,43,250,1) 0%, rgba(47,0,115,1) 100%);
-    display: flex;
-    height: 60px;
-    width: 100%;
-}
-
-.heading {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
-
-.all-blogs, .blog-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.all-blogs {
+body {
+    background-color: #e7e7e7;
+  }
+  
+  #main-navigation {
+    background-color: #390281;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  #all-posts {
+    margin: 7rem auto;
+    width: 90%;
+    max-width: 60rem;
+  }
+  
+  #all-posts h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2e2e2e;
+    margin: 3rem 0;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .post img {
+    width: 7rem;
+    height: 7rem;
+  }
+  
+  .post a {
+    height: 22rem;
+    transform-origin: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
     background-color: white;
-    margin: auto;
-    align-items: center;
-    width: 50%;
-}
-
-.blog-cards {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    column-gap: 15px;
-}
-
-.blog-info {
-    align-items: center;
-    flex: 1 1 0px;
-    min-width: 150px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-    border-radius: 7px;
-    padding: 20px 10px 20px 10px;
-    transition: background-color 0.2s, transform 0.2s, color 0.2s;
-}
-
-.blog-info:hover {
-    background-color: rgb(89, 63, 255);
-    transform: scale(1.1);
-    color: white;
-}
-
-.blog-info:active {
-    background-color: rgb(69, 55, 160);
-}
-
-.blog-title {
-    margin-bottom: 15px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.blog-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.blog-summary {
-    text-align: center;
-    font-size: 15px;
-}
+  }

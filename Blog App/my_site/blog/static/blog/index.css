@@ -1,80 +1,75 @@
-.background-page {
-    background: linear-gradient(52deg, rgba(105,43,250,1) 0%, rgba(47,0,115,1) 100%);
+#welcome {
+    background: linear-gradient(to right top, #6305dd, #390281);
+    padding: 6rem 12%;
+  }
+  
+  #welcome header {
     display: flex;
-    height: 270px;
-    width: 100%;
-}
-
-.about-author {
-    display: flex;
-    margin-left: 100px;
-    margin-bottom: 15px;
-}
-
-.profile-picture {
-    width: 75px;
-    border: 2.5px solid white;
-    border-radius: 7px;
-    transform: rotate(-5deg);
-    margin-right: 15px;
-}
-
-.author-name {
+    align-items: flex-start;
+    margin: 3rem auto;
+  }
+  
+  #welcome img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    object-position: top;
+    border: 5px solid white;
+    border-radius: 12px;
+    background-color: #ffe1bf;
+    transform: rotateZ(-5deg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  #welcome h2 {
+    font-size: 3.5rem;
+    margin: 0 0 0 2rem;
+    color: #e4e4e4;
+    width: 10rem;
+  }
+  
+  #welcome p {
     color: white;
-    font-weight: 600;
-    font-size: 25px;
-    width: 150px;
-    text-decoration: none
-}
-
-.author-bio {
-    color: white;
-    font-size: 15px;
-    margin-left: 100px;
-    margin-bottom: 10px;
-}
-
-.all-blogs, .blog-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.all-blogs {
+    font-size: 1.5rem;
+  }
+  
+  #latest-posts {
     background-color: white;
-    margin: auto;
-    border-radius: 7px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-    align-items: center;
-    width: 50%;
-    padding: 40px 30px 40px 30px;
-}
-
-.blog-cards {
+    padding: 2rem;
+    border-radius: 12px;
+    width: 60rem;
+    margin: -6rem auto 2rem auto;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  #latest-posts h2 {
+    text-align: center;
+  }
+  
+  #latest-posts ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    column-gap: 20px;
-}
-
-.blog-info {
-    align-items: center;
-    flex: 1 1 0px;
-    min-width: 0;
-}
-
-.blog-title {
-    margin-bottom: 15px;
-    font-weight: bold;
+    gap: 1rem;
+  }
+  
+  #latest-posts li {
+    flex: 1;
+  }
+  
+  #about {
     text-align: center;
-}
-
-.blog-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.blog-summary {
-    text-align: center;
-    font-size: 15px;
-}
+    padding: 3rem;
+    background-color: #e48900;
+    margin-top: 5rem;
+  }
+  
+  #about h2 {
+    font-size: 3rem;
+  }
+  
+  #about p {
+    font-size: 1.5rem;
+    color: #353535;
+  }

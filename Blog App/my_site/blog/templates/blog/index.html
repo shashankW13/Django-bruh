@@ -1,96 +1,53 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_title %}
+{% block title %}
     My Blog
 {% endblock %}
 
 {% block css %}
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/index.css' %}">
 {% endblock css %}
 
 {% block content %}
     
-        
-        
-        <div class="about-author">
-            <div>
-                <img src="https://sarahscoop.com/wp-content/uploads/2021/10/itachi-uchiha.jpg" alt="Itachi"
-                    class="profile-picture">
-            </div>
-            
-            <div class="author-name">
-                SHASHANK'S BLOG 
-            </div>
-        </div>
-
-        <div class="author-bio">
+    <section id="welcome">
+        <h1>Welcome to my Blog</h1>
+        <header>
+            <img src="https://sarahscoop.com/wp-content/uploads/2021/10/itachi-uchiha.jpg" 
+                    alt="Shashank - The author of the blog">
+            <h2>
+                SHASHANK'S BLOG
+            </h2>
+        </header>
+        <p>
             Hi, I am Shashank and I love to blog about tech and the world!
-        </div>
+        </p>
+    </section>
 
-        <div class="all-blogs">
-            <div style="margin-bottom: 30px; font-weight:bold;">
-                My Latest Thoughts
-            </div>
-    
-            <div class="blog-cards">
-                {% for blog in blogs %}
-    
-                <div class="blog-info">
-                    <div>
-                        <img src="https://i.pinimg.com/originals/e3/92/8f/e3928f436c5055a6955f0ecf25b5d416.jpg" 
-                                alt="Flowers"
-                                class="blog-icon">
-                    </div>
-    
-                    <div class="blog-title">
-                        {{ blog.title }}
-                    </div>
-    
-                    <div class="blog-summary">
-                        {{ blog.content }}
-                    </div>
-                </div>
+    <section id="latest-posts">
+        <h2>
+            My Latest Thoughts
+        </h2>
 
-                {% endfor %}
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
 
-                {% comment %} <div class="blog-info">
-                    <div>
-                        <img src="https://wallpapers.com/images/hd/lotus-flower-beautiful-waterfall-0gowp0lv2cadpvs3.jpg" 
-                                alt="Waterfall"
-                                class="blog-icon">
-                    </div>
+    <section id="about">
+        <h2>
+            What I do
+        </h2>
+        <p>
+            I love programming, gaming and vfx!!
+        </p>
+        <p>
+            My goal is to keep on growing as a Full Stack developer!
+        </p>
+    </section>
     
-                    <div class="blog-title">
-                        Nature At Its Best
-                    </div>
-    
-                    <div class="blog-summary">
-                        A waterfall is a natural geological feature where a river or stream flows 
-                        over a vertical drop or series of drops in its course. 
-                    </div>
-                </div>
-
-                <div class="blog-info">
-                    <div>
-                        <img src="https://i.pinimg.com/originals/e3/92/8f/e3928f436c5055a6955f0ecf25b5d416.jpg" 
-                                alt="Flowers"
-                                class="blog-icon">
-                    </div>
-    
-                    <div class="blog-title">
-                        Nature At Its Best
-                    </div>
-    
-                    <div class="blog-summary">
-                        Nature is amazing. 
-                        The amount of inspiration I get when walking 
-                        in the nature is incredible.
-                    </div>
-                </div> {% endcomment %}
-                
-            </div>
-        </div>
-
-
 {% endblock %}
