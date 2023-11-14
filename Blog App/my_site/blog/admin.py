@@ -1,6 +1,7 @@
 from django.contrib import admin
-from . import models
+from .models import Post, Author, Tag
 
-admin.site.register(models.Blog)
-
+admin.site.register(Post)
+admin.site.register(Author)
+admin.site.register(Tag)
 
