@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.views import View
+from django.http import HttpResponseRedirect
+from django.views.generic.edit import CreateView
 
-# Create your views here.
+from .forms import ProfileForm
+from .models import UserProfile
 
-
-class CreateProfileView(View):
-    def get(self, request):
-        return render(request, "profiles/create_profile.html")
-
-    def post(self, request):
-        pass
+class CreateProfileView(CreateView):
+    template_name = 'profiles/create_profile.html'
+    model = UserProfile
+    fields = '__all__'
+    success_url = '/profiles'
