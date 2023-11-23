@@ -10,6 +10,20 @@
 {% endblock css %}
 
 {% block content %}
+	{% if comment_form.errors %}
+	<div id="alert">
+		<h2>
+			Adding comment failed!
+		</h2>
+		<p>
+			Please Check the error and fix it!
+		</p>
+		<a href="#comment-form">
+			Go to Error!
+		</a>
+	</div>
+	{% endif %}
+
 	<section id="summary">
 		<h2>
 			{{ post.title }}
@@ -44,4 +58,39 @@
 			{{ post.content|linebreaks }}
 		</p>
 	</main>
+
+	<section id="comments">
+		<ul>
+			{% for comment in comments %}
+				<li>
+					<h2>
+						{{ comment.user_name }}
+					</h2>
+					<p>
+						{{ comment.text|linebreaks }}
+					</p>
+				</li>
+			{% endfor %}
+		</ul>
+	</section>
+
+	<section id="comment-form">
+		<h2>
+			Your Comment
+		</h2>
+		<form action="{% url 'post-detail' post.slug %}" method="POST">
+			{% csrf_token %}
+			{% for form_field in comment_form %}
+				<div class="form-control {% if form_field.errors %}invalid{% endif %}">
+					{{ form_field.label_tag }}
+					{{ form_field }}
+					{{ form_field.errors }}
+				</div>
+			{% endfor %}
+			
+			<button>
+				Add Comment
+			</button>
+		</form>
+	</section>
 {% endblock content %}
