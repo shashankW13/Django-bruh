@@ -22,7 +22,7 @@
 					</p>
 				</div>
 				<div>
-					{% if user == post.author %}
+					{% if user == post.author or perms.main.delete_post %}
 						<form method="POST">
 							{% csrf_token %}
 							<button type="submit" 
